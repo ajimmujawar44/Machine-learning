@@ -1,0 +1,24 @@
+.logo{
+    width:60px;
+    height:60px;
+    
+    display:block;
+    margin:20px auto;
+}
+
+.main-title{
+    text-align:center;
+    margin-top:10px;
+    font-size:42px;
+    font-weight:bold;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+}
+
+.best-model{
+    text-align:center;
+    margin-top:15px;
+}

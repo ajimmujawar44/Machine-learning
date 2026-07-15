@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Model Evaluation Results</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="container mt-4">
+
+    <div class="text-center mb-4">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             class="logo">
+
+        <h2 class="main-title">
+            Model Evaluation Results
+        </h2>
+
+        <p class="subtitle">
+            Performance Comparison of Machine Learning Models
+        </p>
+
+    </div>
+
+</div>
+
+<div class="container mt-5">
+
+    <h2 class="text-center">Model Evaluation Results</h2>
+
+    {{ table|safe }}
+
+    <br>
+
+    <a href="/" class="btn btn-primary">
+        Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>

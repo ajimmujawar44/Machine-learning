@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Model Evaluation Results</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+
+        body{
+            background:#f8f9fa;
+        }
+
+        .container{
+            margin-top:40px;
+        }
+
+        table{
+            width:100%;
+        }
+
+        th{
+            text-align:center;
+        }
+
+        td{
+            text-align:center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="text-center mb-4">
+        📊 Machine Learning Model Evaluation
+    </h1>
+
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+
+    <div class="text-center mt-4">
+
+        <a href="/" class="btn btn-primary">
+            ⬅ Back to Prediction
+        </a>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

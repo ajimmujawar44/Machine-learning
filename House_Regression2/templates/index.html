@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>House Price Prediction</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <!-- Logo -->
+<div class="text-center">
+
+<img src="{{ url_for('static', filename='images/logo.png') }}"
+     alt="House Price Prediction Logo"
+     width="100"
+     height="100"
+     >
+
+    <h1 class="main-title">House Price Prediction</h1>
+
+    <p class="subtitle">
+        Predict House Prices Using Multiple Machine Learning Regression Models
+    </p>
+
+    <h4 class="best-model">
+        ⭐ Best Model :
+        <span>{{ best_model }}</span>
+    </h4>
+
+</div>
+
+    <br>
+
+    <div class="card shadow-lg">
+
+        <div class="card-body">
+
+            <form action="/predict" method="POST">
+
+                <div class="form-group">
+
+                    <label><strong>Average Area Income</strong></label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        class="form-control"
+                        name="income"
+                        placeholder="Enter Average Area Income"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><strong>Average Area House Age</strong></label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        class="form-control"
+                        name="age"
+                        placeholder="Enter Average House Age"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><strong>Average Area Number of Rooms</strong></label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        class="form-control"
+                        name="rooms"
+                        placeholder="Enter Number of Rooms"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><strong>Average Area Number of Bedrooms</strong></label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        class="form-control"
+                        name="bedrooms"
+                        placeholder="Enter Number of Bedrooms"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><strong>Area Population</strong></label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        class="form-control"
+                        name="population"
+                        placeholder="Enter Area Population"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label><strong>Select Regression Model</strong></label>
+
+                    <select
+                        class="form-control"
+                        name="model"
+                        required>
+
+                        {% for model in models %}
+
+                        <option value="{{ model }}">
+                            {{ model }}
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-lg btn-block">
+
+                    Predict House Price
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a
+            href="/leaderboard"
+            class="btn btn-success btn-lg">
+
+            📊 View Model Evaluation Results
+
+        </a>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

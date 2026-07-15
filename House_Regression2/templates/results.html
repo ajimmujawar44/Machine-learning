@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <!-- Logo -->
+    <div class="text-center mb-4">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="Logo"
+             class="logo">
+
+        <h1 class="main-title">
+            Prediction Result
+        </h1>
+
+        <p class="subtitle">
+            House Price Prediction Using Machine Learning
+        </p>
+
+    </div>
+
+    <!-- Result Card -->
+    <div class="card shadow-lg">
+
+        <div class="card-body text-center">
+
+            <h4 class="text-primary">
+                Selected Model
+            </h4>
+
+            <h3 class="font-weight-bold">
+                {{ model_name }}
+            </h3>
+
+            <hr>
+
+            <h4 class="text-success">
+                Predicted House Price
+            </h4>
+
+            <h2 class="display-4 text-success font-weight-bold">
+                ₹ {{ prediction }}
+            </h2>
+
+            <br>
+
+            <a href="/" class="btn btn-primary btn-lg">
+                🔄 Make Another Prediction
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+
+        <a href="/leaderboard"
+           class="btn btn-success btn-lg">
+
+            📊 View Model Evaluation Results
+
+        </a>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+
+{% include 'footer.html' %}
+</body>
+</html>
